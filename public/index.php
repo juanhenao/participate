@@ -1,9 +1,8 @@
 <?php
-require "./vendor/autoload.php";
+require "../vendor/autoload.php";
 
 use App\Repositories\Student as StudentRepository;
 use App\Controllers\StudentController;
-use App\Models\Student;
 
 $controller = new StudentController(new StudentRepository());
 $student = $controller->show(1);
@@ -13,6 +12,7 @@ $jose = $controller->show(5);
 $jose->setName('Josef');
 $statusUpdated = $controller->update($jose);
 
+var_dump($jose);
 
 $students = $controller->index();
 
@@ -56,6 +56,6 @@ $students = $controller->index();
         ?>
         </tbody>
     </table>
-    <a href="./student/add.php">Add a new student</a>
+    <a href="student/add.php">Add a new student</a>
 </body>
 </html>

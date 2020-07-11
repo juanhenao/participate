@@ -1,5 +1,5 @@
 <?php
-require "../vendor/autoload.php";
+require "../../vendor/autoload.php";
 
 use App\Repositories\Student as StudentRepository;
 use App\Controllers\StudentController;
