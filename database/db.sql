@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE DATABASE participate;
+USE participate;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,9 +43,9 @@ CREATE TABLE `contributions` (
 --
 
 INSERT INTO `contributions` (`id`, `student_id`, `annotation`, `valoration`, `created_at`, `updated_at`) VALUES
-(3, 11, 'Very good comment', 4, '2020-07-01 08:30:06', '2020-07-01 08:30:06'),
-(4, 11, 'Average', 8, '2020-07-01 08:32:19', '2020-07-01 08:32:19'),
-(5, 5, 'Excellent', 10, '2020-07-01 08:32:19', '2020-07-01 08:32:19');
+(1, 1, 'Very good comment', 4, '2020-07-01 08:30:06', '2020-07-01 08:30:06'),
+(2, 2, 'Average', 8, '2020-07-01 08:32:19', '2020-07-01 08:32:19'),
+(3, 3, 'Excellent', 10, '2020-07-01 08:32:19', '2020-07-01 08:32:19');
 
 -- --------------------------------------------------------
 
@@ -70,7 +72,7 @@ INSERT INTO `students` (`id`, `name`, `last_name`, `email`, `created_at`, `updat
 (3, 'Jose', 'Carlos', 'jose2@local.de', '2020-06-30 15:04:52', '2020-06-30 15:04:52'),
 (4, 'Marco', 'Cruz', 'cruz@local.de', '2020-06-30 16:56:33', '2020-06-30 16:56:33'),
 (5, 'David', 'Hernandez', 'herna@local.de', '2020-06-30 16:58:44', '2020-06-30 16:58:44'),
-(6, 'Daniel', 'Lacotoure', 'lacouture@local.de', '2020-06-30 17:14:10', '2020-06-30 17:14:10'),
+(6, 'Daniel', 'Lacotoure', 'lacouture@local.de', '2020-06-30 17:14:10', '2020-06-30 17:14:10');
 
 --
 -- Indizes der exportierten Tabellen

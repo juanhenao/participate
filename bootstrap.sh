@@ -26,5 +26,7 @@ sudo apt-get install -y php7.4-mbstring
 echo "-- Copy development php.ini --"
 sudo cp /usr/lib/php/7.4/php.ini-development  /etc/php/7.4/apache2/php.ini
 
+mysql --user=root --password=root < /var/www/html/database/db.sql
+
 echo "-- Restart Apache --"
 sudo /etc/init.d/apache2 restart
