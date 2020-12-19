@@ -25,6 +25,17 @@ sudo apt-get install -y php7.4-bcmath php7.4-zip
 echo "-- Copy development php.ini --"
 sudo cp /usr/lib/php/7.4/php.ini-development  /etc/php/7.4/apache2/php.ini
 
+echo "-- Set root directory --";
+VHOST=$(cat <<EOF
+<VirtualHost *:80>
+	DocumentRoot /var/www/html/public
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+EOF
+)
+echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
+
 mysql --user=root --password=root < /var/www/html/database/db.sql
 
 echo "-- Restart Apache --"
