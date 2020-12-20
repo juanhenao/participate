@@ -4,18 +4,15 @@
 namespace App\Repositories;
 
 
-use App\DBConnectable;
 use App\Models\Student as StudentModel;
 use DateTime;
 use Exception;
 use PDO;
 
-class Student
+class Student extends AbstractRepository
 {
 
-    use DBConnectable;
-
-    public function getAll()
+    public function getAll(): array
     {
         $query = "SELECT * FROM students";
         $stmt = $this->getConnection()->query($query);
@@ -37,7 +34,7 @@ class Student
         return $result;
     }
 
-    public function save(StudentModel $student)
+    public function save(StudentModel $student): bool
     {
         $now = new DateTime();
         $query = "INSERT INTO students(name, last_name, email, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
@@ -52,7 +49,7 @@ class Student
         return !$stmt->rowCount()==0;
     }
 
-    public function modify(StudentModel $student)
+    public function modify(StudentModel $student): bool
     {
         $now = new DateTime();
         $query = "UPDATE students SET name = ?, last_name = ?, email = ?, updated_at = ? WHERE id = ?";

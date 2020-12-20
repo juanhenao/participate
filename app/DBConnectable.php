@@ -12,7 +12,7 @@ trait DBConnectable
     private string $pwd = "root";
     private string $db = "participate";
 
-    private function getConnection()
+    protected function getConnection()
     {
         $dsn = "mysql:host={$this->host};dbname={$this->db}";
         $pdo = new PDO($dsn, $this->user, $this->pwd);

@@ -15,16 +15,6 @@ class Student implements Model
     private string $created_at;
     private string $updated_at;
 
-
-    public function __construct(string $name, string $last_name, string $email, string $created_at=null, string $updated_at=null)
-    {
-        $this->setName($name);
-        $this->setLastName($last_name);
-        $this->setEmail($email);
-        $this->setCreatedAt($created_at);
-        $this->setUpdatedAt($updated_at);
-    }
-
     public function getFullName(): string
     {
         return $this->name . ' ' . $this->last_name;
@@ -125,7 +115,6 @@ class Student implements Model
     {
         $this->updated_at = $updated_at ?? '2020-06-30 09:40:46';
     }
-
 
 
 }

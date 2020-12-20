@@ -11,17 +11,18 @@ $status = $controller->delete(4);
 
 $jose = $controller->show(5);
 $jose->setName('Josef');
-$statusUpdated = $controller->update($jose);*/
+$statusUpdated = $controller->update($jose);
 
 
 
-//$students = $controller->index();
+$students = $controller->index();*/
 
 
-$seeder = new StudentSeeder(new StudentRepository());
-$seeder->generateStudents(20);
+//$seeder = new StudentSeeder(new StudentRepository());
+//$seeder->generateStudents(20);
 
-
+$contributionSeeder = new \Database\Seeders\Contribution(new \App\Repositories\Contribution());
+$contributionSeeder->seed(30);
 
 ?>
 
@@ -33,8 +34,6 @@ $seeder->generateStudents(20);
 </head>
 <body>
     <h1>Student List</h1>
-    <p>Delete status: <?= $status? 'Successful' : 'Failed' ?></p>
-    <p>The student with id: <?= $student? $student->getFullName() : 'Not found' ?></p>
     <table>
         <thead>
             <tr>
