@@ -10,6 +10,7 @@ class Student extends AbstractSeeder
 
     public function __construct(Repository $repository)
     {
+        parent::__construct();
         $this->repository = $repository;
     }
 

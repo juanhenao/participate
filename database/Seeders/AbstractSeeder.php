@@ -18,5 +18,5 @@ abstract class AbstractSeeder
         $this->faker = Factory::create();
     }
 
-    public abstract function seed(int $number): void;
+    abstract public function seed(int $number): void;
 }

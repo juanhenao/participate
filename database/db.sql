@@ -38,15 +38,6 @@ CREATE TABLE `contributions` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Daten für Tabelle `contributions`
---
-
-INSERT INTO `contributions` (`id`, `student_id`, `annotation`, `valoration`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Very good comment', 4, '2020-07-01 08:30:06', '2020-07-01 08:30:06'),
-(2, 2, 'Average', 8, '2020-07-01 08:32:19', '2020-07-01 08:32:19'),
-(3, 3, 'Excellent', 10, '2020-07-01 08:32:19', '2020-07-01 08:32:19');
-
 -- --------------------------------------------------------
 
 --
@@ -61,18 +52,6 @@ CREATE TABLE `students` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `students`
---
-
-INSERT INTO `students` (`id`, `name`, `last_name`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Juan', 'Henao', 'juanhenao10@gmail.com', '2020-06-30 09:40:46', '2020-06-30 09:40:57'),
-(2, 'Josef', 'Carlos', 'jose@local.de', '2020-06-30 15:04:32', '2020-10-26 10:06:07'),
-(3, 'Jose', 'Carlos', 'jose2@local.de', '2020-06-30 15:04:52', '2020-06-30 15:04:52'),
-(4, 'Marco', 'Cruz', 'cruz@local.de', '2020-06-30 16:56:33', '2020-06-30 16:56:33'),
-(5, 'David', 'Hernandez', 'herna@local.de', '2020-06-30 16:58:44', '2020-06-30 16:58:44'),
-(6, 'Daniel', 'Lacotoure', 'lacouture@local.de', '2020-06-30 17:14:10', '2020-06-30 17:14:10');
 
 --
 -- Indizes der exportierten Tabellen

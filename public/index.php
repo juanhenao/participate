@@ -18,11 +18,11 @@ $statusUpdated = $controller->update($jose);
 $students = $controller->index();*/
 
 
-//$seeder = new StudentSeeder(new StudentRepository());
-//$seeder->generateStudents(20);
+$seeder = new StudentSeeder(new StudentRepository());
+$seeder->seed(20);
 
 $contributionSeeder = new \Database\Seeders\Contribution(new \App\Repositories\Contribution());
-$contributionSeeder->seed(30);
+$contributionSeeder->seed(60);
 
 ?>
 
