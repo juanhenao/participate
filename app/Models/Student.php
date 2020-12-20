@@ -16,6 +16,14 @@ class Student implements Model
     private string $updated_at;
 
 
+    public function __construct(string $name, string $last_name, string $email, string $created_at=null, string $updated_at=null)
+    {
+        $this->setName($name);
+        $this->setLastName($last_name);
+        $this->setEmail($email);
+        $this->setCreatedAt($created_at);
+        $this->setUpdatedAt($updated_at);
+    }
 
     public function getFullName(): string
     {
@@ -97,9 +105,9 @@ class Student implements Model
     /**
      * @param string $created_at
      */
-    public function setCreatedAt(string $created_at): void
+    public function setCreatedAt(?string $created_at): void
     {
-        $this->created_at = $created_at;
+        $this->created_at = $created_at ?? '2020-06-30 09:40:46';
     }
 
     /**
@@ -113,9 +121,9 @@ class Student implements Model
     /**
      * @param \DateTime $updated_at
      */
-    public function setUpdatedAt(\DateTime $updated_at): void
+    public function setUpdatedAt(?\DateTime $updated_at): void
     {
-        $this->updated_at = $updated_at;
+        $this->updated_at = $updated_at ?? '2020-06-30 09:40:46';
     }
 
 

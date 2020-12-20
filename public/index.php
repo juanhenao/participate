@@ -3,20 +3,23 @@ require "../vendor/autoload.php";
 
 use App\Repositories\Student as StudentRepository;
 use App\Controllers\StudentController;
+use Database\Seeders\Student as StudentSeeder;
 
-$controller = new StudentController(new StudentRepository());
+/*$controller = new StudentController(new StudentRepository());
 $student = $controller->show(1);
 $status = $controller->delete(4);
 
 $jose = $controller->show(5);
 $jose->setName('Josef');
-$statusUpdated = $controller->update($jose);
-
-var_dump($jose);
-
-$students = $controller->index();
+$statusUpdated = $controller->update($jose);*/
 
 
+
+//$students = $controller->index();
+
+
+$seeder = new StudentSeeder(new StudentRepository());
+$seeder->generateStudents(20);
 
 
 

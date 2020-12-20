@@ -11,10 +11,6 @@ class StudentController
 {
     private Repository $repository;
 
-    /**
-     * StudentController constructor.
-     * @param Repository $repository
-     */
     public function __construct(Repository $repository)
     {
         $this->repository = $repository;
