@@ -14,7 +14,7 @@ class Student extends AbstractSeeder
         $this->repository = $repository;
     }
 
-    public function seed(int $number): void
+    public function seed(int $number = 20): void
     {
         for ($i = 0; $i < $number; $i++) {
 

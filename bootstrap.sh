@@ -36,7 +36,10 @@ EOF
 )
 echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
 
+echo "-- Import database structure and seed fake data --"
 mysql --user=root --password=root < /var/www/html/database/db.sql
+cd /var/www/html
+php scripts/seed.php
 
 echo "-- Restart Apache --"
 sudo /etc/init.d/apache2 restart

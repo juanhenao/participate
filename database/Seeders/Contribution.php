@@ -14,6 +14,7 @@ class Contribution extends AbstractSeeder
 
     public function __construct(ContributionRepository $repository)
     {
+        parent::_construct();
         $this->repository = $repository;
     }
 
@@ -25,7 +26,7 @@ class Contribution extends AbstractSeeder
         return array_map(fn(StudentModel $student) => $student->getId(), $students);
     }
 
-    public function seed(int $number): void
+    public function seed(int $number = 60): void
     {
         $studentsIds = $this->getStudentsIds();
         $annotations = ['Bad', 'Regular', 'Good', 'Excellent'];
